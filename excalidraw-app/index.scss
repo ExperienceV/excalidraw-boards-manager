@@ -1,0 +1,262 @@
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+}
+
+.excalidraw-app {
+  height: 100%;
+}
+
+.portfolio-manager__toggle {
+  position: fixed;
+  z-index: 20;
+  top: 1rem;
+  left: 1rem;
+  border: 1px solid #d0d5dd;
+  border-radius: 0.5rem;
+  padding: 0.55rem 0.8rem;
+  color: #344054;
+  background: #fff;
+  box-shadow: 0 2px 8px rgb(16 24 40 / 12%);
+  cursor: pointer;
+  font: 600 0.8rem sans-serif;
+}
+
+.theme-toggle {
+  position: fixed;
+  z-index: 20;
+  top: 3.6rem;
+  left: 1rem;
+  border: 1px solid #d0d5dd;
+  border-radius: 0.5rem;
+  padding: 0.55rem 0.8rem;
+  color: #344054;
+  background: #fff;
+  box-shadow: 0 2px 8px rgb(16 24 40 / 12%);
+  cursor: pointer;
+  font: 600 0.8rem sans-serif;
+}
+
+.portfolio-manager {
+  position: fixed;
+  z-index: 30;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  width: min(22rem, calc(100vw - 2rem));
+  flex-direction: column;
+  border-right: 1px solid #eaecf0;
+  color: #101828;
+  background: #fff;
+  box-shadow: 0.5rem 0 2rem rgb(16 24 40 / 12%);
+  font-family: sans-serif;
+}
+
+.portfolio-manager__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 1.25rem 1.25rem 1rem;
+}
+
+.portfolio-manager__header h1 {
+  margin: 0;
+  font-size: 1.35rem;
+}
+
+.portfolio-manager__eyebrow {
+  margin: 0 0 0.2rem;
+  color: #667085;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.portfolio-manager__close {
+  border: 0;
+  color: #667085;
+  background: transparent;
+  cursor: pointer;
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+.portfolio-manager__actions {
+  display: flex;
+  gap: 0.5rem;
+  padding: 0 1.25rem 1rem;
+}
+
+.portfolio-manager__actions button,
+.portfolio-manager__form button {
+  border: 1px solid #d0d5dd;
+  border-radius: 0.4rem;
+  padding: 0.5rem 0.7rem;
+  color: #344054;
+  background: #fff;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.portfolio-manager__actions button.is-active,
+.portfolio-manager__form button {
+  border-color: #7f56d9;
+  color: #fff;
+  background: #7f56d9;
+}
+
+.portfolio-manager__list {
+  flex: 1;
+  overflow-y: auto;
+  padding: 0 0.75rem 1rem;
+}
+
+.portfolio-manager__portfolio {
+  margin-bottom: 0.4rem;
+}
+
+.portfolio-manager__portfolio-name,
+.portfolio-manager__board {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  gap: 0.55rem;
+  border: 0;
+  border-radius: 0.4rem;
+  padding: 0.55rem 0.6rem;
+  color: #344054;
+  background: transparent;
+  cursor: pointer;
+  text-align: left;
+}
+
+.portfolio-manager__portfolio-name {
+  font-weight: 700;
+}
+
+.portfolio-manager__portfolio-name:hover,
+.portfolio-manager__board:hover,
+.portfolio-manager__portfolio-name.is-selected,
+.portfolio-manager__board.is-selected {
+  background: #f4f3ff;
+  color: #6941c6;
+}
+
+.portfolio-manager__boards {
+  margin-left: 1.25rem;
+  border-left: 1px solid #eaecf0;
+  padding-left: 0.4rem;
+}
+
+.portfolio-manager__no-boards,
+.portfolio-manager__empty,
+.portfolio-manager__hint {
+  display: block;
+  margin: 0.5rem 0;
+  color: #667085;
+  font-size: 0.8rem;
+}
+
+.portfolio-manager__form {
+  border-top: 1px solid #eaecf0;
+  padding: 1rem 1.25rem 1.25rem;
+}
+
+.portfolio-manager__form label {
+  display: block;
+  margin-bottom: 0.45rem;
+  color: #344054;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.portfolio-manager__form-row {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.portfolio-manager__form input {
+  min-width: 0;
+  flex: 1;
+  border: 1px solid #d0d5dd;
+  border-radius: 0.4rem;
+  padding: 0.5rem 0.6rem;
+  font: inherit;
+}
+
+.portfolio-manager__error {
+  margin: 0 1.25rem 0.75rem;
+  color: #b42318;
+  font-size: 0.8rem;
+}
+
+.excalidraw-app.is-dark .portfolio-manager__toggle,
+.excalidraw-app.is-dark .theme-toggle {
+  border-color: #475467;
+  color: #f2f4f7;
+  background: #1d2939;
+  box-shadow: 0 2px 8px rgb(0 0 0 / 35%);
+}
+
+.excalidraw-app.is-dark .portfolio-manager {
+  border-color: #344054;
+  color: #f2f4f7;
+  background: #18181b;
+  box-shadow: 0.5rem 0 2rem rgb(0 0 0 / 35%);
+}
+
+.excalidraw-app.is-dark .portfolio-manager__eyebrow,
+.excalidraw-app.is-dark .portfolio-manager__close,
+.excalidraw-app.is-dark .portfolio-manager__no-boards,
+.excalidraw-app.is-dark .portfolio-manager__empty,
+.excalidraw-app.is-dark .portfolio-manager__hint {
+  color: #98a2b3;
+}
+
+.excalidraw-app.is-dark .portfolio-manager__actions button,
+.excalidraw-app.is-dark .portfolio-manager__form input {
+  border-color: #475467;
+  color: #f2f4f7;
+  background: #1d2939;
+}
+
+.excalidraw-app.is-dark .portfolio-manager__portfolio-name,
+.excalidraw-app.is-dark .portfolio-manager__board,
+.excalidraw-app.is-dark .portfolio-manager__form label {
+  color: #eaecf0;
+}
+
+.excalidraw-app.is-dark .portfolio-manager__portfolio-name:hover,
+.excalidraw-app.is-dark .portfolio-manager__board:hover,
+.excalidraw-app.is-dark .portfolio-manager__portfolio-name.is-selected,
+.excalidraw-app.is-dark .portfolio-manager__board.is-selected {
+  color: #d6bbfb;
+  background: #322653;
+}
+
+.excalidraw-app.is-dark .portfolio-manager__boards,
+.excalidraw-app.is-dark .portfolio-manager__form {
+  border-color: #344054;
+}
+
+body {
+  -webkit-text-size-adjust: 100%;
+  background: #fff;
+}
+
+#root {
+  -webkit-touch-callout: none;
+  user-select: none;
+}
+
+@media screen and (min-width: 1200px) {
+  #root {
+    -webkit-touch-callout: default;
+    user-select: auto;
+  }
+}
